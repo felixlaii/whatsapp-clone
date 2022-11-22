@@ -68,6 +68,12 @@ function SideBar({ currentUser, signOut }) {
           <MoreVertIcon />
         </div>
       </div>
+
+      <div className='sidebar-search'>
+          <div className='sidebar-search-input'>
+              
+          </div>
+      </div>
     </div>
   );
 }
