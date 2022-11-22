@@ -3,7 +3,8 @@ import db, { auth, googleProvider } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import "./login.scss";
 
-function Login() {
+function Login({ setUser }) {
+    const navigate = useNavigate();
   return (
     <div>Login</div>
   )
