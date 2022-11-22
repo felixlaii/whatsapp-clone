@@ -62,6 +62,11 @@ function SideBar({ currentUser, signOut }) {
         <div className="sidebar-header-img" onClick={signOut}>
           <img src={currentUser?.photoURL} alt="" />
         </div>
+        <div className="sidebar-header-btn">
+          <TollIcon />
+          <InsertCommentIcon />
+          <MoreVertIcon />
+        </div>
       </div>
     </div>
   );
