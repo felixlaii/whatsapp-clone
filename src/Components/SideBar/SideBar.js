@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import db from "../../firebase";
 import UserProfile from "../UserProfile/UserProfile";
+import TollIcon from "@mui/icons-material/Toll";
+import InsertCommentIcon from "@mui/icons-material/InsertComment";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import SearchIcon from "@mui/icons-material/Search";
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
