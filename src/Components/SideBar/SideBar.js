@@ -15,17 +15,17 @@ function SideBar({ currentUser, signOut }) {
         );
       });
     };
-  });
 
-  const getFriends = async () => {
-    const data = await db
-      .collection("Friendlist")
-      .doc(currentUser.email)
-      .collection("list")
-      .onSnapshot((snapshot) => {
-        setFriendList(snapshot.docs);
-      });
-  };
+    const getFriends = async () => {
+      const data = await db
+        .collection("Friendlist")
+        .doc(currentUser.email)
+        .collection("list")
+        .onSnapshot((snapshot) => {
+          setFriendList(snapshot.docs);
+        });
+    };
+  });
 
   return <div>SideBar</div>;
 }
