@@ -1,6 +1,6 @@
-import { DoorBack } from "@mui/icons-material";
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
+import db from "../../firebase";
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
