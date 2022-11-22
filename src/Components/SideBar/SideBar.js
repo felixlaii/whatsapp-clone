@@ -30,6 +30,14 @@ function SideBar({ currentUser, signOut }) {
     getFriends();
   }, []);
 
+  const searchedUser = allUsers.filter((user) => {
+      if(searchInput) {
+          if(user.data().fullname.toLowerCase().includes(searchInput.toLowerCase())) {
+              return user;
+          }
+      }
+  })
+
   return <div>SideBar</div>;
 }
 
