@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-function UserProfile() {
+function UserProfile({ name, photoURL, email, lastMessage }) {
   const navigate = useNavigate();
   const goToUser = (emailId) => {
     if (emailId) {
