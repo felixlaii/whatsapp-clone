@@ -22,7 +22,9 @@ function Login({ setUser }) {
         .catch((err) => alert(err.message));
     }
   return (
-    <div>Login</div>
+    <div className='login'>
+        
+    </div>
   )
 }
 
