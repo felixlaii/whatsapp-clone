@@ -10,9 +10,11 @@ function UserProfile({ name, photoURL, email, lastMessage }) {
   };
   return (
     <div className="user-profile" onClick={() => goToUser(email)}>
-      
-  </div>
-    );
+      <div className="user-image">
+        <img src={photoURL} alt="" />
+      </div>
+    </div>
+  );
 }
 
 export default UserProfile;
