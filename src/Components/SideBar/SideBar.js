@@ -69,10 +69,10 @@ function SideBar({ currentUser, signOut }) {
         </div>
       </div>
 
-      <div className='sidebar-search'>
-          <div className='sidebar-search-input'>
-              
-          </div>
+      <div className="sidebar-search">
+        <div className="sidebar-search-input">
+          <SearchIcon />
+        </div>
       </div>
     </div>
   );
