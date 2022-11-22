@@ -81,6 +81,10 @@ function SideBar({ currentUser, signOut }) {
           />
         </div>
       </div>
+
+      <div className='sidebar-chat-list'>
+          
+      </div>
     </div>
   );
 }
