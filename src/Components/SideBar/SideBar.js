@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import db from "../../firebase";
+import UserProfile from "../UserProfile/UserProfile"
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
@@ -36,6 +37,17 @@ function SideBar({ currentUser, signOut }) {
               return user;
           }
       }
+  })
+
+  const searchItem = searchedUser.map((user) => {
+      return (
+          <UserProfile
+          name={user.data().fullname}
+          photoURL={user.data().photoURL}
+          key={user.id}
+          email={user.data().email}
+        />
+      )
   })
 
   return <div>SideBar</div>;
