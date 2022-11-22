@@ -25,6 +25,7 @@ function Login({ setUser }) {
     <div className="login">
       <div className="login-container">
         <img className="login-logo" src="./whatsapp-logo.png" alt="" />
+        <p className="login-name">WhatsApp Web</p>
       </div>
     </div>
   );
