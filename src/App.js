@@ -8,7 +8,7 @@ function App() {
         <Routes>
           <Route path="/chatpage" element={<h1>ChatPage</h1>} />
 
-          <Route path="/" element={<h1>HomePage</h1>} />
+          element={<Home currentUser={user} signOut={signOut} />}
         </Routes>
       </div>
     </Router>
