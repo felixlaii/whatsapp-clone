@@ -13,6 +13,11 @@ function UserProfile({ name, photoURL, email, lastMessage }) {
       <div className="user-image">
         <img src={photoURL} alt="" />
       </div>
+
+      <div className="user-info">
+        <p className="user-name">{name}</p>
+        {lastMessage && <p className="user-lastmessage">{lastMessage}</p>}
+      </div>
     </div>
   );
 }
