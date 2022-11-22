@@ -82,12 +82,17 @@ function SideBar({ currentUser, signOut }) {
         </div>
       </div>
 
-      <div className='sidebar-chat-list'>
-          {searchItem.length > 0
+      <div className="sidebar-chat-list">
+        {searchItem.length > 0
           ? searchItem
-        : friendList.map((friend) => (
-            
-        ))}
+          : friendList.map((friend) => (
+              <UserProfile
+                name={friend.data().fullname}
+                photoURL={friend.data().photoURL}
+                lastMessage={friend.data().lastMessage}
+                email={friend.data().email}
+              />
+            ))}
       </div>
     </div>
   );
