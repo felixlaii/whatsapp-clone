@@ -83,7 +83,11 @@ function SideBar({ currentUser, signOut }) {
       </div>
 
       <div className='sidebar-chat-list'>
-          
+          {searchItem.length > 0
+          ? searchItem
+        : friendList.map((friend) => (
+            
+        ))}
       </div>
     </div>
   );
