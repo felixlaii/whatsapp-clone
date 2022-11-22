@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 
 
 function UserProfile() {
+    const navigate = useNavigate();
+
   return (
     <div>UserProfile</div>
   )
