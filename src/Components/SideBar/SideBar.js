@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 
-function SideBar() {
+function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [friendList, setFriendList] = useState([]);
