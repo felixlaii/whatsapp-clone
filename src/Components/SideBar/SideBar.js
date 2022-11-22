@@ -72,6 +72,13 @@ function SideBar({ currentUser, signOut }) {
       <div className="sidebar-search">
         <div className="sidebar-search-input">
           <SearchIcon />
+          <input
+            type="text"
+            name="search"
+            placeholder="Search..."
+            value={searchInput}
+            onChange={(e) => setSearchInput(e.target.value)}
+          />
         </div>
       </div>
     </div>
