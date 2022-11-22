@@ -25,7 +25,10 @@ function SideBar({ currentUser, signOut }) {
           setFriendList(snapshot.docs);
         });
     };
-  });
+
+    getAllUsers();
+    getFriends();
+  }, []);
 
   return <div>SideBar</div>;
 }
