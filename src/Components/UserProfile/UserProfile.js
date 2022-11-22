@@ -1,13 +1,14 @@
-import React from 'react'
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-
 function UserProfile() {
-    const navigate = useNavigate();
-
-  return (
-    <div>UserProfile</div>
-  )
+  const navigate = useNavigate();
+  const goToUser = (emailId) => {
+    if (emailId) {
+      navigate(`/${emailId}`);
+    }
+  };
+  return <div>UserProfile</div>;
 }
 
-export default UserProfile
+export default UserProfile;
