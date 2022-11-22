@@ -53,11 +53,13 @@ function SideBar({ currentUser, signOut }) {
   });
 
   return (
-  <div className='sidebar'>
-      <div className='sidebar-header'>
-          
+    <div className="sidebar">
+      <div className="sidebar-header">
+        <div className="sidebar-header-img" onClick={signOut}>
+          <img src={currentUser?.photoURL} alt="" />
+        </div>
       </div>
-  </div>
+    </div>
   );
 }
 
