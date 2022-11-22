@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Sidebar.css";
 import db from "../../firebase";
-import UserProfile from "../UserProfile/UserProfile"
+import UserProfile from "../UserProfile/UserProfile";
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
@@ -32,23 +32,25 @@ function SideBar({ currentUser, signOut }) {
   }, []);
 
   const searchedUser = allUsers.filter((user) => {
-      if(searchInput) {
-          if(user.data().fullname.toLowerCase().includes(searchInput.toLowerCase())) {
-              return user;
-          }
+    if (searchInput) {
+      if (
+        user.data().fullname.toLowerCase().includes(searchInput.toLowerCase())
+      ) {
+        return user;
       }
-  })
+    }
+  });
 
   const searchItem = searchedUser.map((user) => {
-      return (
-          <UserProfile
-          name={user.data().fullname}
-          photoURL={user.data().photoURL}
-          key={user.id}
-          email={user.data().email}
-        />
-      )
-  })
+    return (
+      <UserProfile
+        name={user.data().fullname}
+        photoURL={user.data().photoURL}
+        key={user.id}
+        email={user.data().email}
+      />
+    );
+  });
 
   return <div>SideBar</div>;
 }
