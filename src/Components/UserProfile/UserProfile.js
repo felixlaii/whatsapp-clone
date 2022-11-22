@@ -8,7 +8,11 @@ function UserProfile({ name, photoURL, email, lastMessage }) {
       navigate(`/${emailId}`);
     }
   };
-  return <div>UserProfile</div>;
+  return (
+    <div className="user-profile" onClick={() => goToUser(email)}>
+      
+  </div>
+    );
 }
 
 export default UserProfile;
