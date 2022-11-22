@@ -4,7 +4,9 @@ import SideBar from '../SideBar/SideBar'
 
 function Home({ currentUser, signOut }) {
   return (
-    <div>Home</div>
+    <div className='home'>
+        
+    </div>
   )
 }
 
