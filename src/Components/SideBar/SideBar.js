@@ -8,14 +8,14 @@ function SideBar({ currentUser, signOut }) {
   const [friendList, setFriendList] = useState([]);
 
   useEffect(() => {
-      const getAllUsers = async () => {
-          const data = await db.collection("users").onSnapshot((snapshot) => {
-              setAllUsers(
-                  snapshot.docs.filter((doc) => doc.data().email !== currentUser?.email)
-              )
-          })
-      }
-  })
+    const getAllUsers = async () => {
+      const data = await db.collection("users").onSnapshot((snapshot) => {
+        setAllUsers(
+          snapshot.docs.filter((doc) => doc.data().email !== currentUser?.email)
+        );
+      });
+    };
+  });
 
   return <div>SideBar</div>;
 }
