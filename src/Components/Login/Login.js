@@ -14,7 +14,12 @@ function Login({ setUser }) {
                 email: result.user.email,
                 photoURL: result.user.photoURL,
             };
+            navigate("/");
+            setUser(newUser);
+            localStorage.setItem("user", JSON.stringify(newUser));
+            db.collection("user").doc(result.user.email).set(newUser);
         })
+        .catch((err) => alert(err.message));
     }
   return (
     <div>Login</div>
