@@ -30,3 +30,11 @@
     cursor: pointer;
     border-radius: 100%;
   }
+
+  .sidebar-header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 150px;
+    color: #51585c;
+  }
