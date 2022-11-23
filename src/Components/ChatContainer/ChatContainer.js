@@ -62,6 +62,20 @@ function ChatContainer({ currentUser }) {
 
   const send = (e) => {
       e.preventDefault();
+
+      if (emailID) {
+          let payload = {
+              text: message,
+              senderEmail: currentUser.email,
+              receiverEmail: emailID,
+              timeStamp: firebase.firestore.Timestamp.now()
+          }
+          // sender
+          db.collection("chats")
+          .doc(currentUser.email)
+          .collection("messages")
+          .add(payload);
+      }
   }
   return <div>ChatContainer</div>;
 
