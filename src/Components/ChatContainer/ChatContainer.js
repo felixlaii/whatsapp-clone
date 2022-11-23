@@ -89,7 +89,21 @@ function ChatContainer({ currentUser }) {
             photoURL: chatUser.photoURL,
             lastMessage: message,
           });
+
+          db.collection("Friendlist")
+          .doc(emailID)
+          .collection("list")
+          .doc(currentUser.email)
+          .set({
+            email: currentUser.email,
+            fullname: currentUser.fullname,
+            photoURL: currentUser.photoURL,
+            lastMessage: message,
+          });
+
+          setMessage("");
   }
+}
   return <div>ChatContainer</div>;
 
   
