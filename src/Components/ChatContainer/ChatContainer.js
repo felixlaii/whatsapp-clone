@@ -158,6 +158,10 @@ function ChatContainer({ currentUser }) {
             }}
           />
         </form>
+        {/* send button */}
+        <div className="chat-input-send-btn" onClick={send}>
+          <SendIcon />
+        </div>
       </div>
     </div>
   );
