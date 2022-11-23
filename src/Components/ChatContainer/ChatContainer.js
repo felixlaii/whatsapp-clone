@@ -75,7 +75,9 @@ function ChatContainer({ currentUser }) {
           .doc(currentUser.email)
           .collection("messages")
           .add(payload);
-      }
+          
+          // reciever
+          db.collection("chats").doc(emailID).collection("messages").add(payload);
   }
   return <div>ChatContainer</div>;
 
