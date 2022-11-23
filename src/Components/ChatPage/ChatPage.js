@@ -3,7 +3,7 @@ import Chatcontainer from "./Chatcontainer";
 import Sidebar from "./Sidebar";
 import "./chatPage.scss";
 
-function ChatPage() {
+function ChatPage({ currentUser, signOut}) {
   return (
     <div>ChatPage</div>
   )
