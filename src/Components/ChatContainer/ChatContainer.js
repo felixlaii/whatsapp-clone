@@ -49,7 +49,9 @@ function ChatContainer({ currentUser }) {
               setChatMessages(newMessage);
           })
       }
-  })
+      getUser();
+      getMessages();
+  }, [emailID])
   return <div>ChatContainer</div>;
 
   
