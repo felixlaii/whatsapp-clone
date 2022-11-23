@@ -33,6 +33,8 @@ function App() {
             element={<Home currentUser={user} signOut={signOut} />}
             />
           </Routes>
+        ) : (
+          <Login setUser={setUser} />
         )}
       </div>
     </Router>
