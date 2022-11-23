@@ -30,6 +30,17 @@ function ChatContainer({ currentUser }) {
               setChatUser(snapshot.data());
           })
       }
+
+      const getMessages = async () => {
+          const data = await db
+          .collection("chats")
+          .doc(emailID)
+          .collection("messages")
+          .orderBy("timeStamp", "asc")
+          .onSnapshot((snapshot) => {
+              let messages = snapshot.docs.map((doc) => doc.data());
+          })
+      }
   })
   return <div>ChatContainer</div>;
 
