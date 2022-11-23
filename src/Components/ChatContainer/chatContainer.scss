@@ -44,3 +44,11 @@
     overflow-y: scroll;
     background-color: #ece5dd;
   }
+
+  .chat-input {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background-color: #f0f0f0;
+    position: relative;
+  }
