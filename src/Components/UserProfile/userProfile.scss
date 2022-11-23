@@ -13,3 +13,8 @@
   .user-image {
     width: 45px;
   }
+
+  .user-image > img {
+    width: 100%;
+    border-radius: 100%;
+  }
