@@ -14,3 +14,11 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  .chat-user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  
