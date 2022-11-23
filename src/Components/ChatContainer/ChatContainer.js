@@ -51,7 +51,14 @@ function ChatContainer({ currentUser }) {
       }
       getUser();
       getMessages();
-  }, [emailID])
+  }, [emailID]);
+
+  useEffect(() => {
+      chatBox.current.addEventListener("DOMNodeInserted", (event) => {
+          const { currentTarget: target } = event;
+          target.scroll({ top: target.scrollHeight, behavior: "smooth "});
+      })
+  })
   return <div>ChatContainer</div>;
 
   
