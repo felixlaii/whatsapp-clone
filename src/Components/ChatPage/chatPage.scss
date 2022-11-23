@@ -19,3 +19,12 @@
     z-index: -1;
     content: "";
   }
+
+  .chatpage-container {
+    width: 100%;
+    height: 100%;
+    max-width: 1366px;
+  
+    z-index: 100;
+    display: flex;
+  }
