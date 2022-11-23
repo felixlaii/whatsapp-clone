@@ -66,3 +66,12 @@
     color: #acacac;
     margin-left: 10px;
   }
+
+  .sidebar-search-input > input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-left: 6px;
+    margin-bottom: 2px;
+    width: 80%;
+  }
