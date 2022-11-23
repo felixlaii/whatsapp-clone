@@ -1,6 +1,6 @@
 import React from "react";
-import Chatcontainer from "./Chatcontainer";
-import Sidebar from "./Sidebar";
+import Chatcontainer from "../ChatContainer/ChatContainer";
+import Sidebar from "../SideBar/SideBar";
 import "./chatPage.scss";
 
 function ChatPage({ currentUser, signOut }) {

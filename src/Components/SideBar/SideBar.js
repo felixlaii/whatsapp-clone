@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Sidebar.css";
+import "./sideBar.scss";
 import db from "../../firebase";
 import UserProfile from "../UserProfile/UserProfile";
 import TollIcon from "@mui/icons-material/Toll";
