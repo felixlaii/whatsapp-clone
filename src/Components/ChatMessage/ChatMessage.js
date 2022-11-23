@@ -4,7 +4,7 @@ import "./chatMessage.scss";
 
 import React from 'react'
 
-function ChatMessage() {
+function ChatMessage({ message, time, sender}) {
   return (
     <div>ChatMessage</div>
   )
