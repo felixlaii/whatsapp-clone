@@ -22,91 +22,104 @@ function ChatContainer({ currentUser }) {
   const [chatMessages, setChatMessages] = useState([]);
 
   useEffect(() => {
-      const getUser = async () => {
-          const data = await db
-          .collection("users")
-          .doc(emailID)
-          .onSnapshot((snapsnap) => {
-              setChatUser(snapshot.data());
-          })
-      }
+    const getUser = async () => {
+      const data = await db
+        .collection("users")
+        .doc(emailID)
+        .onSnapshot((snapsnap) => {
+          setChatUser(snapshot.data());
+        });
+    };
 
-      const getMessages = async () => {
-          const data = await db
-          .collection("chats")
-          .doc(emailID)
-          .collection("messages")
-          .orderBy("timeStamp", "asc")
-          .onSnapshot((snapshot) => {
-              let messages = snapshot.docs.map((doc) => doc.data());
+    const getMessages = async () => {
+      const data = await db
+        .collection("chats")
+        .doc(emailID)
+        .collection("messages")
+        .orderBy("timeStamp", "asc")
+        .onSnapshot((snapshot) => {
+          let messages = snapshot.docs.map((doc) => doc.data());
 
-              let newMessage = messages.filter(
-                  (message) => 
-                  message.senderEmail === (currentUser.email || emailID) ||
-                  message.receiverEmail === (currentUser.email || emailID)
-              );
+          let newMessage = messages.filter(
+            (message) =>
+              message.senderEmail === (currentUser.email || emailID) ||
+              message.receiverEmail === (currentUser.email || emailID)
+          );
 
-              setChatMessages(newMessage);
-          })
-      }
-      getUser();
-      getMessages();
+          setChatMessages(newMessage);
+        });
+    };
+    getUser();
+    getMessages();
   }, [emailID]);
 
   useEffect(() => {
-      chatBox.current.addEventListener("DOMNodeInserted", (event) => {
-          const { currentTarget: target } = event;
-          target.scroll({ top: target.scrollHeight, behavior: "smooth "});
-      })
+    chatBox.current.addEventListener("DOMNodeInserted", (event) => {
+      const { currentTarget: target } = event;
+      target.scroll({ top: target.scrollHeight, behavior: "smooth " });
+    });
   }, [chatMessages]);
 
   const send = (e) => {
-      e.preventDefault();
+    e.preventDefault();
 
-      if (emailID) {
-          let payload = {
-              text: message,
-              senderEmail: currentUser.email,
-              receiverEmail: emailID,
-              timeStamp: firebase.firestore.Timestamp.now()
-          }
-          // sender
-          db.collection("chats")
-          .doc(currentUser.email)
-          .collection("messages")
-          .add(payload);
-          
-          // reciever
-          db.collection("chats").doc(emailID).collection("messages").add(payload);
+    if (emailID) {
+      let payload = {
+        text: message,
+        senderEmail: currentUser.email,
+        receiverEmail: emailID,
+        timeStamp: firebase.firestore.Timestamp.now(),
+      };
+      // sender
+      db.collection("chats")
+        .doc(currentUser.email)
+        .collection("messages")
+        .add(payload);
 
-          db.collection("Friendlist")
-          .doc(currentUser.email)
-          .collection("list")
-          .doc(emailID)
-          .set({
-            email: chatUser.email,
-            fullname: chatUser.fullname,
-            photoURL: chatUser.photoURL,
-            lastMessage: message,
-          });
+      // reciever
+      db.collection("chats").doc(emailID).collection("messages").add(payload);
 
-          db.collection("Friendlist")
-          .doc(emailID)
-          .collection("list")
-          .doc(currentUser.email)
-          .set({
-            email: currentUser.email,
-            fullname: currentUser.fullname,
-            photoURL: currentUser.photoURL,
-            lastMessage: message,
-          });
+      db.collection("Friendlist")
+        .doc(currentUser.email)
+        .collection("list")
+        .doc(emailID)
+        .set({
+          email: chatUser.email,
+          fullname: chatUser.fullname,
+          photoURL: chatUser.photoURL,
+          lastMessage: message,
+        });
 
-          setMessage("");
-  }
-}
-  return <div>ChatContainer</div>;
+      db.collection("Friendlist")
+        .doc(emailID)
+        .collection("list")
+        .doc(currentUser.email)
+        .set({
+          email: currentUser.email,
+          fullname: currentUser.fullname,
+          photoURL: currentUser.photoURL,
+          lastMessage: message,
+        });
 
-  
+      setMessage("");
+    }
+  };
+  return (
+    <div className="chat-containeer">
+      <div className="chat-container-header">
+        <div className="chat-user-info">
+          <div className="chat-user-img">
+            <img src={chatUser?.photoURL} alt="" />
+          </div>
+          <p>{chatUser?.fullname}</p>
+        </div>
+
+        <div className="chat-container-header-btn">
+          <MoreVertIcon />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default ChatContainer;
