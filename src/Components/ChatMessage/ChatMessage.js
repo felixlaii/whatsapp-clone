@@ -2,12 +2,25 @@ import React from "react";
 import { auth } from "../firebase";
 import "./chatMessage.scss";
 
-import React from 'react'
+import React from "react";
 
-function ChatMessage({ message, time, sender}) {
+function ChatMessage({ message, time, sender }) {
   return (
-    <div>ChatMessage</div>
-  )
+    <div
+      className="chat-message"
+      style={{
+        alignSelf:
+          sender === auth?.currentUser?.email ? "flex-end" : "flex-start",
+
+        backgroundColor:
+          sender == auth?.currentUser?.email ? "#dcf8c6" : "#fff",
+      }}
+    >
+      <div className="chat-message-text">
+        <p>{message}</p>
+      </div>
+    </div>
+  );
 }
 
-export default ChatMessage
+export default ChatMessage;
