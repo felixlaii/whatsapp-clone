@@ -28,7 +28,10 @@ function App() {
             path="/:emailID"
             element={<ChatPage currentUser={user} signOut={signOut} />}
             />
-            
+            <Route 
+            path="/"
+            element={<Home currentUser={user} signOut={signOut} />}
+            />
           </Routes>
         )}
       </div>
