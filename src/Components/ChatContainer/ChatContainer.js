@@ -118,6 +118,18 @@ function ChatContainer({ currentUser }) {
           <MoreVertIcon />
         </div>
       </div>
+
+      {/* chatdisplay-container */}
+
+      <div className="chat-display-container" ref={chatBox}>
+        {chatMessages.map((message) => (
+          <ChatMessage
+            message={message.text}
+            time={message.timeStamp}
+            sender={message.senderEmail}
+          />
+        ))}
+      </div>
     </div>
   );
 }
