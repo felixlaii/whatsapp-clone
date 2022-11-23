@@ -11,3 +11,13 @@
     min-height: 500px;
     overflow-y: hidden;
   }
+
+  .home::before {
+    width: 100vw;
+    height: 222px;
+    background-color: #4ec0a5;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    top: 0;
+  }
