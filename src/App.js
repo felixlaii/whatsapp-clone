@@ -5,7 +5,7 @@ import Home from "./Components/Home";
 import ChatPage from "./Components/ChatPage";
 import { useState } from "react";
 import Login from "./Components/Login";
-import { auth } from "./firebase";
+import db, { auth } from "./firebase";
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
@@ -22,11 +22,15 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/chatpage" element={<h1>ChatPage</h1>} />
-
-          element={<Home currentUser={user} signOut={signOut} />}
-        </Routes>
+        {user ? (
+          <Routes>
+            <Route
+            path="/:emailID"
+            element={<ChatPage currentUser={user} signOut={signOut} />}
+            />
+            
+          </Routes>
+        )}
       </div>
     </Router>
   );
