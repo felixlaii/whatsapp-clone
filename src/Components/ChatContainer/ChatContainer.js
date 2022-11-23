@@ -10,3 +10,13 @@ import Picker from "emoji-picker-react";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";
+
+import React from 'react'
+
+function ChatContainer() {
+  return (
+    <div>ChatContainer</div>
+  )
+}
+
+export default ChatContainer
