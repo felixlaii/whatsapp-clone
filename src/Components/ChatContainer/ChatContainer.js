@@ -130,6 +130,18 @@ function ChatContainer({ currentUser }) {
           />
         ))}
       </div>
+      {/* chatinput */}
+
+      <div className="chat-input">
+        {/* buttons */}
+        {openEmojiBox && (
+          <Picker
+            onEmojiClick={(event, emojiObject) =>
+              setMessage(message + emojiObject.emoji)
+            }
+          />
+        )}
+      </div>
     </div>
   );
 }
