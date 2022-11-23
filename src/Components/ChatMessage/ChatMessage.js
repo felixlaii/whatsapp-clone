@@ -19,6 +19,9 @@ function ChatMessage({ message, time, sender }) {
       <div className="chat-message-text">
         <p>{message}</p>
       </div>
+      <div className="chat-message-date">
+        <p>{new Date(time.toDate()).toLocaleString()}</p>
+      </div>
     </div>
   );
 }
