@@ -11,12 +11,16 @@ import { useParams } from "react-router-dom";
 import db from "../firebase";
 import firebase from "firebase";
 
-import React from 'react'
+import React from "react";
 
 function ChatContainer({ currentUser }) {
-  return (
-    <div>ChatContainer</div>
-  )
+  const [message, setMessage] = useState("");
+  const [openEmojiBox, setOpenEmojiBox] = useState(false);
+  const { emailID } = useParams();
+  const [chatUser, setChatUser] = useState({});
+  const chatBox = useRef(null);
+  const [chatMessages, setChatMessages] = useState([]);
+  return <div>ChatContainer</div>;
 }
 
-export default ChatContainer
+export default ChatContainer;
