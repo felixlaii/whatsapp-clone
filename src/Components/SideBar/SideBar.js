@@ -6,7 +6,7 @@ import TollIcon from "@mui/icons-material/Toll";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
-import DefaultProfileImg from "../../assets/user.png"
+import DefaultProfileImg from "../../assets/user.png";
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
@@ -84,12 +84,18 @@ function SideBar({ currentUser, signOut }) {
       </div>
 
       <div className="sidebar-chat-list">
+        {/* <UserProfile
+          name="Lynn Cheung"
+          photoURL={DefaultProfileImg}
+          lastMessage={friend.data().lastMessage}
+          email={friend.data().email}
+        /> */}
         {searchItem.length > 0
           ? searchItem
           : friendList.map((friend) => (
               <UserProfile
-                name={friend.data().fullname}
-                photoURL={DefaultProfileImg}
+                name="lynn cheung"
+                photoURL="../../assets/user.png"
                 lastMessage={friend.data().lastMessage}
                 email={friend.data().email}
               />

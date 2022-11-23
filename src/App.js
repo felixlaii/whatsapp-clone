@@ -4,7 +4,7 @@ import Home from "./Components/Home/Home"
 import ChatPage from "./Components/ChatPage/ChatPage"
 import { useState } from "react";
 import Login from "./Components/Login/Login"
-import db, { auth } from "./firebase";
+import { auth } from "./firebase";
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
