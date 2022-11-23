@@ -11,7 +11,7 @@ function UserProfile({ name, photoURL, email, lastMessage }) {
   return (
     <div className="user-profile" onClick={() => goToUser(email)}>
       <div className="user-image">
-        <img src={photoURL} alt="" />
+        <img src="../../../public/user.png" alt="" />
       </div>
 
       <div className="user-info">

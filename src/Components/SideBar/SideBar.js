@@ -6,6 +6,7 @@ import TollIcon from "@mui/icons-material/Toll";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
+import DefaultProfileImg from "../../assets/user.png"
 
 function SideBar({ currentUser, signOut }) {
   const [allUsers, setAllUsers] = useState([]);
@@ -49,7 +50,7 @@ function SideBar({ currentUser, signOut }) {
     return (
       <UserProfile
         name={user.data().fullname}
-        photoURL={user.data().photoURL}
+        photoURL="../../assets/user.png"
         key={user.id}
         email={user.data().email}
       />
@@ -60,7 +61,7 @@ function SideBar({ currentUser, signOut }) {
     <div className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-header-img" onClick={signOut}>
-          <img src={currentUser?.photoURL} alt="" />
+          <img src={DefaultProfileImg} alt="" />
         </div>
         <div className="sidebar-header-btn">
           <TollIcon />
@@ -88,7 +89,7 @@ function SideBar({ currentUser, signOut }) {
           : friendList.map((friend) => (
               <UserProfile
                 name={friend.data().fullname}
-                photoURL={friend.data().photoURL}
+                photoURL={DefaultProfileImg}
                 lastMessage={friend.data().lastMessage}
                 email={friend.data().email}
               />
