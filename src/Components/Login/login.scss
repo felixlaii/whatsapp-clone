@@ -36,3 +36,18 @@
     height: 150px;
     margin-bottom: 20px;
   }
+
+  .login-btn {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 200px;
+    justify-content: center;
+    border: none;
+    outline: none;
+    background-color: #00755a;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
