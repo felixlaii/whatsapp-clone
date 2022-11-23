@@ -146,6 +146,18 @@ function ChatContainer({ currentUser }) {
           <InsertEmoticonIcon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
           <AttachFileIcon />
         </div>
+
+        {/* text input element */}
+        <form onSubmit={send}>
+          <input
+            type="text"
+            placeholder="Type a Message"
+            value={message}
+            onChange={(e) => {
+              setMessage(e.target.value);
+            }}
+          />
+        </form>
       </div>
     </div>
   );
