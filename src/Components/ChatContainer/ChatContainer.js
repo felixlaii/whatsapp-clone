@@ -20,7 +20,20 @@ function ChatContainer({ currentUser }) {
   const [chatUser, setChatUser] = useState({});
   const chatBox = useRef(null);
   const [chatMessages, setChatMessages] = useState([]);
+
+  useEffect(() => {
+      const getUser = async () => {
+          const data = await db
+          .collection("users")
+          .doc(emailID)
+          .onSnapshot((snapsnap) => {
+              setChatUser(snapshot.data());
+          })
+      }
+  })
   return <div>ChatContainer</div>;
+
+  
 }
 
 export default ChatContainer;
