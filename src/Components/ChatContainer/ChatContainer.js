@@ -13,7 +13,7 @@ import firebase from "firebase";
 
 import React from 'react'
 
-function ChatContainer() {
+function ChatContainer({ currentUser }) {
   return (
     <div>ChatContainer</div>
   )
