@@ -141,6 +141,11 @@ function ChatContainer({ currentUser }) {
             }
           />
         )}
+
+        <div className="chat-input-btn">
+          <InsertEmoticonIcon onClick={() => setOpenEmojiBox(!openEmojiBox)} />
+          <AttachFileIcon />
+        </div>
       </div>
     </div>
   );
