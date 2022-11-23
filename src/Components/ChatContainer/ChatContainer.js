@@ -58,7 +58,7 @@ function ChatContainer({ currentUser }) {
           const { currentTarget: target } = event;
           target.scroll({ top: target.scrollHeight, behavior: "smooth "});
       })
-  })
+  }, [chatMessages]);
   return <div>ChatContainer</div>;
 
   
