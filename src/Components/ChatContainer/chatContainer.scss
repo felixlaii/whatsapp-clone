@@ -37,3 +37,10 @@
     margin-right: 10px;
   }
   
+  .chat-display-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    background-color: #ece5dd;
+  }
