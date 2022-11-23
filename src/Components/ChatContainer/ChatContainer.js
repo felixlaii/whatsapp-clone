@@ -39,6 +39,14 @@ function ChatContainer({ currentUser }) {
           .orderBy("timeStamp", "asc")
           .onSnapshot((snapshot) => {
               let messages = snapshot.docs.map((doc) => doc.data());
+
+              let newMessage = messages.filter(
+                  (message) => 
+                  message.senderEmail === (currentUser.email || emailID) ||
+                  message.receiverEmail === (currentUser.email || emailID)
+              );
+
+              setChatMessages(newMessage);
           })
       }
   })
