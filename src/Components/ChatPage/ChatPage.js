@@ -3,10 +3,17 @@ import Chatcontainer from "./Chatcontainer";
 import Sidebar from "./Sidebar";
 import "./chatPage.scss";
 
-function ChatPage({ currentUser, signOut}) {
+function ChatPage({ currentUser, signOut }) {
   return (
-    <div>ChatPage</div>
-  )
+    <div className="chatpage">
+      <div className="chatpage-container">
+        {/* sidebar */}
+        <Sidebar currentUser={currentUser} signOut={signOut} />
+        {/* chatcontainer */}
+        <Chatcontainer currentUser={currentUser} />
+      </div>
+    </div>
+  );
 }
 
-export default ChatPage
+export default ChatPage;
