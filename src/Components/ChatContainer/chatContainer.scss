@@ -5,3 +5,12 @@
     flex-direction: column;
   }
   
+  .chat-container-header {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 5px 0px 5px 10px;
+    background-color: #ededed;
+    align-items: center;
+    justify-content: space-between;
+  }
