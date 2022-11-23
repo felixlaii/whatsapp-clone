@@ -8,3 +8,13 @@
     position: relative;
     background-color: #fafafa;
   }
+
+  .sidebar-header {
+    height: 50px;
+    padding: 5px 0 5px 10px;
+    background-color: #ededed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
