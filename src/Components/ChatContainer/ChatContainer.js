@@ -59,6 +59,10 @@ function ChatContainer({ currentUser }) {
           target.scroll({ top: target.scrollHeight, behavior: "smooth "});
       })
   }, [chatMessages]);
+
+  const send = (e) => {
+      e.preventDefault();
+  }
   return <div>ChatContainer</div>;
 
   
