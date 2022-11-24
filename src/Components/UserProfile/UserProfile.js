@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./userProfile.scss"
 
 function UserProfile({ name, photoURL, email, lastMessage }) {
   const navigate = useNavigate();

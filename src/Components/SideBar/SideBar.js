@@ -42,6 +42,7 @@ function SideBar({ currentUser, signOut }) {
         user.data().fullname.toLowerCase().includes(searchInput.toLowerCase())
       ) {
         return user;
+        // console.log(user.data().fullname)
       }
     }
   });
@@ -61,7 +62,7 @@ function SideBar({ currentUser, signOut }) {
     <div className="sidebar">
       <div className="sidebar-header">
         <div className="sidebar-header-img" onClick={signOut}>
-          <img src={DefaultProfileImg} alt="" />
+          <img src={currentUser?.photoURL} alt="" />
         </div>
         <div className="sidebar-header-btn">
           <TollIcon />
@@ -93,9 +94,9 @@ function SideBar({ currentUser, signOut }) {
         {searchItem.length > 0
           ? searchItem
           : friendList.map((friend) => (
-              <UserProfile
-                name="lynn cheung"
-                photoURL="../../assets/user.png"
+            <UserProfile
+                name={friend.data().fullname}
+                photoURL={friend.data().photoURL}
                 lastMessage={friend.data().lastMessage}
                 email={friend.data().email}
               />

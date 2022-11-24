@@ -102,7 +102,7 @@ function ChatContainer({ currentUser }) {
     }
   };
   return (
-    <div className="chat-containeer">
+    <div className="chat-container">
       <div className="chat-container-header">
         <div className="chat-user-info">
           <div className="chat-user-img">
