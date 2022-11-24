@@ -51,7 +51,7 @@ function SideBar({ currentUser, signOut }) {
     return (
       <UserProfile
         name={user.data().fullname}
-        photoURL="../../assets/user.png"
+        photoURL={photoURL}
         key={user.id}
         email={user.data().email}
       />
